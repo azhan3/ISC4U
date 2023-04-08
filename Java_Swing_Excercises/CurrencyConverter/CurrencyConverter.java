@@ -1,4 +1,4 @@
-package Java_Swing_Excercises;
+package Java_Swing_Excercises.CurrencyConverter;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

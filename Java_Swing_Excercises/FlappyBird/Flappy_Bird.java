@@ -70,12 +70,10 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
     
-        // Draw sky background
         gamePanel.refresh(pipes, ContinueAnimation, birdY, score, started, gameOver, groundX);
 
         gamePanel.Component(g2);
 
-        // Update ground position
         groundX -= pipeSpeed;
         if (groundX < -20) {
             groundX = 0;
@@ -114,7 +112,7 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
         birdY += birdSpeed;
         if (pipes.size() != 0) {
             int PipeX = pipes.get(0).x();
-            if (PipeX % 300 == 0) {
+            if (PipeX % 200 == 0) {
                 pipes.add(new Pipe(600));
             }
             if (PipeX <= 0) {

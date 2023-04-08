@@ -35,11 +35,11 @@ public class Pipe {
 
     }
     public Boolean intersects(int birdY, Rectangle bird) {
-        if (Math.abs(topPipe.x - BIRD_X + bird.height) - PIPE_WIDTH < 0) {
+        if (Math.abs(topPipe.x - (BIRD_X + (PIPE_WIDTH/2))) - (PIPE_WIDTH/2) - 10 <= 0) {
             if (birdY <= topPipe.height || birdY + bird.height >= bottomPipe.y) {
                 return true;
             }
-        }
+        } 
         return false;
     }
 }

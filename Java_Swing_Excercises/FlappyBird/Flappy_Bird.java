@@ -12,7 +12,7 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
     GamePanel gamePanel;
     JButton exitButton, retryButton;
     FlappyBirdInstructions instructions;
-    private final Font FONT = Font.createFont(Font.TRUETYPE_FONT, new File("./Java_Swing_Excercises/FlappyBird/font.ttf")).deriveFont(50f);;
+    private final Font FONT = Font.createFont(Font.TRUETYPE_FONT, new File("./Java_Swing_Excercises/FlappyBird/font.ttf")).deriveFont(50f);
     private int frames;
     private boolean jumping = false, started = false, gameOver = false;
     private Timer timer;

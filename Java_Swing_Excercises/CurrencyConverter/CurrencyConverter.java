@@ -19,7 +19,7 @@ public class CurrencyConverter extends JFrame implements ActionListener {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        Image img = ImageIO.read(new File("Java_Swing_Excercises/currency.png")).getScaledInstance(65, 50, Image.SCALE_DEFAULT);;
+        Image img = ImageIO.read(new File("Java_Swing_Excercises/CurrencyConverter/currency.png")).getScaledInstance(65, 50, Image.SCALE_DEFAULT);;
         JLabel pic = new JLabel(new ImageIcon(img));
         JPanel inputPanel = new JPanel();
         

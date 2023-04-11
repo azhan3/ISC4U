@@ -19,7 +19,7 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
     private final int BIRD_X = 50, GROUND_Y = 450;
     private int birdY, score, groundX, jump_counter;
     private double birdSpeed, pipeSpeed;
-    private final double GRAVITY = 0.2;
+    private final double GRAVITY = 0.25;
     private ArrayList<Pipe> pipes;
     Pipe ContinueAnimation;
     private Rectangle bird;

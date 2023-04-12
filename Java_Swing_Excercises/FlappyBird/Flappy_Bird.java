@@ -18,20 +18,20 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
     private Timer timer;
     private final int BIRD_X = 50, GROUND_Y = 450;
     private int birdY, score, groundX, jump_counter;
-    private double birdSpeed, pipeSpeed;
+    private double birdSpeed, pipeSpeed, resetPipe, resetBird;
     private final double GRAVITY = 0.25;
     private ArrayList<Pipe> pipes;
     Pipe ContinueAnimation;
     private Rectangle bird;
 
-    public Flappy_Bird() throws IOException, FontFormatException {
+    public Flappy_Bird(double pipeSpeed, double birdSpeed) throws IOException, FontFormatException {
         frames = score = groundX = jump_counter = 0;
-        birdSpeed = 1;
-        pipeSpeed = 2;
-        birdY = 250;
+        this.resetPipe = pipeSpeed;
+        this.resetBird = birdSpeed;
         pipes = new ArrayList<Pipe>();
         bird = new Rectangle(BIRD_X, birdY, 40, 40);
         createMenu();
+        restart();
         gamePanel = new GamePanel(pipes, ContinueAnimation, birdY, score, started, gameOver, groundX, FONT);
         timer = new Timer(12, this);
         timer.start();
@@ -160,7 +160,8 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
         started = false;
         gameOver = false;
         birdY = 250;
-        pipeSpeed = 2;
+        pipeSpeed = resetPipe;
+        birdSpeed = resetBird;
         pipes.clear();
         ContinueAnimation = null;
         exitButton.setVisible(false);
@@ -192,7 +193,7 @@ public class Flappy_Bird extends JPanel implements ActionListener, KeyListener, 
     }
     public static void main(String[] args) throws IOException, FontFormatException {
         JFrame frame = new JFrame("Flappy Bird");
-        Flappy_Bird game = new Flappy_Bird();
+        Flappy_Bird game = new Flappy_Bird(2, 2.5);
         frame.add(game);
         frame.setSize(600, 600);
         frame.setVisible(true);

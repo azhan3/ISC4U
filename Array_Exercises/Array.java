@@ -1,17 +1,17 @@
-package Array_Excercises;
+package Array_Exercises;
 
 import java.util.Scanner;
 import java.util.Random;
 
 public class Array {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Random rand = new Random();
 
-        int min = getIntInput(input, "Enter minimum value: ");
-        int max = getIntInput(input, "Enter maximum value: ");
-
-        int[] arr = new int[10];
+        int min = getIntInput(sc, "Enter minimum value: ");
+        int max = getIntInput(sc, "Enter maximum value: ");
+        int arrSize = getIntInput(sc, "Enter array size: ");
+        int[] arr = new int[arrSize];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextInt(max - min + 1) + min;
         }
@@ -22,7 +22,7 @@ public class Array {
         }
         System.out.println();
 
-        int searchNum = getIntInput(input, "Enter number to search for: ");
+        int searchNum = getIntInput(sc, "Enter number to search for: ");
 
         int index = linearSearch(arr, searchNum);
 

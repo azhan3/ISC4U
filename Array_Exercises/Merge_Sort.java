@@ -1,4 +1,4 @@
-package Array_Excercises;
+package Array_Exercises;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,14 +6,15 @@ import java.util.Random;
 
 public class Merge_Sort {
   public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     Random rand = new Random();
 
-    int min = getIntInput(input, "Enter minimum value: ");
-    int max = getIntInput(input, "Enter maximum value: ");
+    int min = getIntInput(sc, "Enter minimum value: ");
+    int max = getIntInput(sc, "Enter maximum value: ");
+    int arrSize = getIntInput(sc, "Enter array size: ");
 
     ArrayList<Integer> arrList = new ArrayList<Integer>();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < arrSize; i++) {
       arrList.add(rand.nextInt(max - min + 1) + min);
     }
 

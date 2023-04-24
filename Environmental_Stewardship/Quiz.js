@@ -1,5 +1,5 @@
-class Quiz{
-    constructor(quizData, spriteSrc){
+class Quiz {
+    constructor(quizData, spriteSrc) {
         this.data = quizData[spriteSrc];
         this.questions = this.data.question;
         this.answers = this.data.answers;
@@ -7,7 +7,7 @@ class Quiz{
         this.popup = window.open('', '_blank', 'width=650,height=650');
 
     }
-    writeArticle(article) {        
+    writeArticle(article) {
         this.popup.document.write(article);
 
         this.popup.document.write(`<style>
@@ -52,8 +52,8 @@ class Quiz{
 			margin-bottom: 10px;
 		}
 	</style>`);
-      }
-    Initialize(){
+    }
+    Initialize() {
         this.popup.document.write(`
         <head>
             <style>
@@ -216,19 +216,19 @@ class Quiz{
                     <h1>You Got \${correct}/\${total} Correct</h1> 
                     <button class="button-6" role="button" onclick="window.close()">Exit</button> 
                 \`; 
-                show('Question${this.questions.length}','Question${this.questions.length-1}'); 
+                show('Question${this.questions.length}','Question${this.questions.length - 1}'); 
             } 
             </script> 
     
         </head>
         <body>
-        `); 
+        `);
     }
-    showQuiz(){
+    showQuiz() {
         // Show quiz in this.popup
-        for (let i = 0 ; i < this.questions.length ; ++i) { 
-            let QandA = ``; 
-            for (let j = 0; j < this.answers[i].length; j++) { 
+        for (let i = 0; i < this.questions.length; ++i) {
+            let QandA = ``;
+            for (let j = 0; j < this.answers[i].length; j++) {
                 QandA += `
                 <div class="wrapper">
                     <input class="state" type="radio" name="answer${i}" id="${i}${j}" value="${j}">
@@ -237,20 +237,20 @@ class Quiz{
                     <span class="text">${this.answers[i][j]}</span>
                     </label>
                 </div>
-                `            }  
+                `            }
             this.popup.document.write(` 
             <div id="Question${i}" style="display:none" class="radiogroup"> 
                 <h1>${this.questions[i]}</h1> 
                 ${QandA} 
-                <button class="button-6" role="button" onclick="return show('${i > 0 ? `Question${i-1}` : "art"}','Question${i}');">Back</button>
+                <button class="button-6" role="button" onclick="return show('${i > 0 ? `Question${i - 1}` : "art"}','Question${i}');">Back</button>
                 
-                <button class="button-6" role="button" onclick="${i == this.questions.length - 1 ? `checkAnswer([${this.correctAnswer}])` : `return show('Question${i+1}','Question${i}');`}">${i == this.questions.length - 1 ? "Submit" : "Next"}</button> 
+                <button class="button-6" role="button" onclick="${i == this.questions.length - 1 ? `checkAnswer([${this.correctAnswer}])` : `return show('Question${i + 1}','Question${i}');`}">${i == this.questions.length - 1 ? "Submit" : "Next"}</button> 
             </div> 
-            `); 
-        } 
+            `);
+        }
         this.popup.document.write(` 
             <div id="Question${this.questions.length}" style="display:none"> 
             </div> 
-        `); 
+        `);
     }
 }

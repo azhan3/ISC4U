@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Client",
+            "request": "launch",
+            "mainClass": "UML.Client",
+            "projectName": "java_stuff_445b03f6"
+        },
+        {
+            "type": "java",
+            "name": "aaa",
+            "request": "launch",
+            "mainClass": "UML.aaa",
+            "projectName": "java_stuff_445b03f6"
+        },
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "java_stuff_445b03f6"
+        },
+        {
+            "type": "java",
+            "name": "RightTriangle",
+            "request": "launch",
+            "mainClass": "UML.RightTriangle",
+            "projectName": "java_stuff_445b03f6"
+        },
+        {
+            "type": "java",
             "name": "Merge_Sort",
             "request": "launch",
             "mainClass": "Array_Exercises.Merge_Sort",
